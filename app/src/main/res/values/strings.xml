@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mardiana</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="questions">
+        <item>Would you like to play table tennis with me later?</item>
+        <item>Do you have the Thrills latest album?</item>
+        <item>Are you renting your house?</item>
+        <item>Is it expensive?</item>
+        <item>Do you know Roman Reign?</item>
+    </string-array>
+</resources>

@@ -4,8 +4,14 @@ import com.example.mardiana.config.Constants;
 import com.example.mardiana.model.Quisioner;
 import com.example.mardiana.model.GetQuisioner;
 import com.example.mardiana.model.UserModel;
+import com.example.mardiana.model.HasilQuisioner;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -13,6 +19,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -27,6 +34,26 @@ public interface APIService {
 
   @GET("api/getGejala")
   Call<GetQuisioner> getQuisioner();
+
+  @FormUrlEncoded
+  @POST("api/register")
+  Call<UserModel.UserDataModel> postRegister(@Field("username") String username,
+                                             @Field("password") String password,
+                                             @Field("email") String email);
+  @FormUrlEncoded
+  @POST("api/updateprofil")
+  Call<UserModel.UserDataModel> postUpdateProfil(@Field("id") String id,
+                                               @Field("username") String username,
+                                               @Field("password") String password,
+                                               @Field("gantipassword") String gantipassword,
+                                               @Field("email") String email);
+  @POST("api/getNaive")
+  Call<HasilQuisioner> postGejala(@Body HasilQuisioner hasil);
+
+  @POST("api/getprofile")
+  Call<UserModel.UserDataModel> postId(@Body UserModel iduser);
+  //Call<ArrayList> postGejala(@Body JSONArray answer);
+
     class Factory{
         public static APIService create(){
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();

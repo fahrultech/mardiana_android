@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/spacing_medium"
-            android:text="ADDICTION TEST"
+            android:text="PROFIL"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textColor="@color/green_300"
             android:textStyle="bold" />
@@ -34,7 +34,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +43,7 @@
             android:textColor="@color/blue_grey_200" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/username"
+            android:id="@+id/profil_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-4dp"
@@ -55,7 +54,26 @@
             android:singleLine="true"
             android:textColor="@color/blue_grey_800"
             android:theme="@style/EditText.Green" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EMAIL"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:textColor="@color/blue_grey_200" />
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:inputType="text"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/blue_grey_800"
+            android:theme="@style/EditText.Green" />
         <View
             android:layout_width="0dp"
             android:layout_height="@dimen/spacing_mlarge" />
@@ -69,7 +87,27 @@
             android:textColor="@color/blue_grey_200" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/profil_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:inputType="textPassword"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/blue_grey_800"
+            android:theme="@style/EditText.Green" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GANTI PASSWORD"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:textColor="@color/blue_grey_200" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ganti_profil_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-4dp"
@@ -81,19 +119,22 @@
             android:textColor="@color/blue_grey_800"
             android:theme="@style/EditText.Green" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_mlarge" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="@dimen/spacing_mxlarge" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_confirm"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginLeft="-4dp"
             android:layout_marginRight="-4dp"
             android:background="@drawable/btn_rounded_green_300"
-            android:text="M A S U K"
+            android:text="C O N F I R M"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
@@ -101,37 +142,6 @@
         <View
             android:layout_width="0dp"
             android:layout_height="@dimen/spacing_medium" />
-
-        <LinearLayout
-            android:id="@+id/sign_up_for_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tidak Punya Akun?"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/blue_grey_400" />
-
-            <Button
-                android:id="@+id/daftar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:paddingLeft="-25dp"
-                android:paddingTop="0dp"
-                android:paddingRight="0dp"
-                android:text="Daftar"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/blue_grey_400"
-                android:textSize="14sp" />
-
-
-        </LinearLayout>
 
         <View
             android:layout_width="0dp"

@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     >
-
     <TextView
         android:id="@+id/question"
         android:layout_width="fill_parent"
@@ -13,28 +12,43 @@
         android:layout_gravity="center"
         />
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
-        <RadioButton
-            android:id="@+id/yes"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_weight="1"
-            android:text="Yes"
-            android:textColor="#000" />
-
-        <RadioButton
-            android:id="@+id/no"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_weight="1"
-            android:text="No"
-            android:textColor="#000" />
+        android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/ss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Sangat Setuju"
+                android:textColor="#000" />
+            <RadioButton
+                android:id="@+id/s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Setuju"
+                android:textColor="#000" />
+            <RadioButton
+                android:id="@+id/ts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Tidak Setuju"
+                android:textColor="#000" />
+            <RadioButton
+                android:id="@+id/sts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Sangat Tidak Setuju"
+                android:textColor="#000" />
     </RadioGroup>
 
 </LinearLayout>

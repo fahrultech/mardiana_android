@@ -1,37 +1,39 @@
 package com.example.mardiana.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class UserModel {
+    @SerializedName("id")
+    @Expose
     private String id;
-    private String nama;
-    private String jk;
-    private String usia;
-    private String level;
 
+    @SerializedName("username")
+    @Expose
+    private String username;
+
+    @SerializedName("email")
+    @Expose
+    private String email;
+
+    public UserModel(String id){
+        this.id = id;
+    }
     public String getId(){
         return id;
     }
     public void setId(String id){
         this.id = id;
     }
-    public String getNama(){
-        return nama;
+
+    public String getUsername() {
+        return username;
     }
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-    public String getJk(){
-        return jk;
-    }
-    public void setJk(String jk){
-        this.jk = jk;
-    }
-    public String getUsia(){
-        return usia;
-    }
-    public void setUsia(String usia){
-        this.usia = usia;
+
+    public String getEmail() {
+        return email;
     }
 
     public class UserDataModel extends MessageModel {
@@ -41,7 +43,6 @@ public class UserModel {
             return results;
         }
 
-        public void setResults(List<UserModel> results){this.results = results;}
     }
 }
 

@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     ProgressDialog pDialog;
-    Button btn_login;
+    Button btn_login, btn_daftar;
     EditText txt_username, txt_password;
     TextView txt_lupa;
 
@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btn_login = findViewById(R.id.btn_login);
+        btn_daftar = findViewById(R.id.daftar);
         txt_username = findViewById(R.id.username);
         txt_password = findViewById(R.id.password);
 
@@ -56,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+        btn_daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void checkLogin(final String username, final String password){
@@ -73,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(response.body().getMessage().equalsIgnoreCase("Berhasil")){
                         if(SessionUtils.login(LoginActivity.this, response.body().getResults().get(0))){
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("iduser", response.body().getResults().get(0).getId());
                             startActivity(intent);
                             finish();
                         }

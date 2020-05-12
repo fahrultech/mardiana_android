@@ -14,6 +14,7 @@ public class Quisioner {
     @Expose
     private String gejala;
 
+    private String statusGejala;
     public Quisioner(){}
 
     public Quisioner(String id, String gejala){
@@ -24,7 +25,6 @@ public class Quisioner {
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -35,6 +35,9 @@ public class Quisioner {
     public void setGejala(String gejala) {
         this.gejala = gejala;
     }
+
+    public String getStatusGejala(){ return statusGejala; }
+    public void setStatusGejala(String statusGejala) { this.statusGejala = statusGejala; }
 
 
 }

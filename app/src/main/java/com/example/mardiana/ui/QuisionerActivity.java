@@ -76,9 +76,11 @@ public class QuisionerActivity extends AppCompatActivity {
                                    if(response.isSuccessful()){
                                        String gejala = response.body().getResults().get(0).toString();
                                        String name = response.body().getName();
+                                       String prob = response.body().getResults().get(1).toString();
                                        Intent intent = new Intent(QuisionerActivity.this, HasilActivity.class);
                                        intent.putExtra("gejala",gejala);
                                        intent.putExtra("name",name);
+                                       intent.putExtra("prob",prob);
                                        startActivity(intent);
                                    }
                                 }

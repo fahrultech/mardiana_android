@@ -10,6 +10,7 @@ public class HasilActivity extends AppCompatActivity {
 
     TextView txt_gejala;
     TextView txt_nama;
+    TextView txt_prob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +19,14 @@ public class HasilActivity extends AppCompatActivity {
 
         String nama = getIntent().getStringExtra("name");
         String gejala = getIntent().getStringExtra("gejala");
+        String prob = getIntent().getStringExtra("prob");
 
         txt_gejala = findViewById(R.id.txt_gejala);
         txt_nama = findViewById(R.id.txt_nama);
+        txt_prob = findViewById(R.id.prob);
 
         txt_gejala.setText(gejala);
         txt_nama.setText(nama);
+        txt_prob.setText(prob);
     }
 }

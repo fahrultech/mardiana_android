@@ -62,12 +62,6 @@
                 android:layout_weight="1"
                 android:text="Skor Posterior" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Aksi" />
-
         </TableRow>
 
         <TableRow
@@ -87,18 +81,6 @@
                 android:layout_weight="1"
                 android:text="Virat Kohli" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/lihat_hasil"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_margin="@dimen/spacing_xsmall"
-        android:clickable="true"
-        android:text="PRIMARY"
-        android:tint="@android:color/white"
-        app:backgroundTint="@color/colorPrimary"
-        app:fabCustomSize="25dp"
-        app:maxImageSize="20dp"
-        app:srcCompat="@drawable/ic_search" />
         </TableRow>
         <TextView
             android:id="@+id/text_hasil"

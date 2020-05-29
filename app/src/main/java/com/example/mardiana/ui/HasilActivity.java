@@ -15,7 +15,6 @@ public class HasilActivity extends AppCompatActivity {
     TextView txt_nama;
     TextView txt_prob;
     TextView txt_hasil;
-    FloatingActionButton btn_hasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,6 @@ public class HasilActivity extends AppCompatActivity {
         txt_gejala = findViewById(R.id.txt_gejala);
         txt_nama = findViewById(R.id.txt_nama);
         txt_prob = findViewById(R.id.prob);
-        btn_hasil = findViewById(R.id.lihat_hasil);
         txt_hasil = findViewById(R.id.text_hasil);
 
         txt_gejala.setText(gejala);
@@ -44,11 +42,5 @@ public class HasilActivity extends AppCompatActivity {
             txt_hasil.setText("Anak bapak/ibu kecanduan level berat, apabila ada hal hal yang merugikan mental anak, segera berkonsultasi ke dokter psikolog terdekat.");
         }
 
-        btn_hasil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Lihat Hasil",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

@@ -1,6 +1,7 @@
 package com.example.mardiana.network;
 
 import com.example.mardiana.config.Constants;
+import com.example.mardiana.model.LihatQuisioner;
 import com.example.mardiana.model.Quisioner;
 import com.example.mardiana.model.GetQuisioner;
 import com.example.mardiana.model.UserModel;
@@ -41,6 +42,11 @@ public interface APIService {
                                              @Field("password") String password,
                                              @Field("email") String email);
   @FormUrlEncoded
+  @POST("api/gantipassword")
+  Call<UserModel.UserDataModel> postGantiPassword(@Field("username") String username,
+                                                  @Field("passwordbaru") String passwordbaru);
+
+  @FormUrlEncoded
   @POST("api/updateprofil")
   Call<UserModel.UserDataModel> postUpdateProfil(@Field("id") String id,
                                                @Field("username") String username,
@@ -52,7 +58,10 @@ public interface APIService {
 
   @POST("api/getprofile")
   Call<UserModel.UserDataModel> postId(@Body UserModel iduser);
-  //Call<ArrayList> postGejala(@Body JSONArray answer);
+
+  @POST("api/gethasil")
+  Call<LihatQuisioner> postLihatHasil(@Body LihatQuisioner iduser);
+
 
     class Factory{
         public static APIService create(){

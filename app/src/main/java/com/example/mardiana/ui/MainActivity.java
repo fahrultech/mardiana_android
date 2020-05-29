@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.view.View;
 import com.example.mardiana.model.UserModel;
+import com.example.mardiana.model.LihatQuisioner;
 import android.widget.Toast;
 
 import com.example.mardiana.network.APIService;
@@ -53,6 +54,29 @@ public class MainActivity extends AppCompatActivity {
         btn_hasil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final LihatQuisioner userid = new LihatQuisioner(user);
+                Call<LihatQuisioner> api = APIService.Factory.create().postLihatHasil(userid);
+                api.enqueue(new Callback<LihatQuisioner>() {
+                    @Override
+                    public void onResponse(Call<LihatQuisioner> call, Response<LihatQuisioner> response) {
+                        if(response.isSuccessful()){
+                            String gejala = response.body().getGejala();
+                            String score = response.body().getScore();
+                            String nama = response.body().getNama();
+                            Intent intent = new Intent(MainActivity.this, HasilActivity.class);
+                            intent.putExtra("gejala",gejala);
+                            intent.putExtra("prob",score);
+                            intent.putExtra("name",nama);
+                            startActivity(intent);
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LihatQuisioner> call, Throwable t) {
+                        Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

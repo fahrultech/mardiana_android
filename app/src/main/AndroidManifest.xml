@@ -15,6 +15,7 @@
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.HasilActivity" />
         <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.GantiPasswordActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

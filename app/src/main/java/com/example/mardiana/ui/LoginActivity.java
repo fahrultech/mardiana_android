@@ -36,12 +36,21 @@ public class LoginActivity extends AppCompatActivity {
         btn_daftar = findViewById(R.id.daftar);
         txt_username = findViewById(R.id.username);
         txt_password = findViewById(R.id.password);
+        txt_lupa = findViewById(R.id.lupa_password);
 
         if(SessionUtils.isLoggedIn(this)){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         }
+
+        txt_lupa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, GantiPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_login.setOnClickListener(new View.OnClickListener(){
             @Override
